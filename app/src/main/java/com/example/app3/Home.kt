@@ -2,13 +2,18 @@ package com.example.app3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.app3.web.CountriesApi
+import com.example.app3.web.RetrofitHelper
 
 class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+
 
         // Recuperer le username et le password
         val username = intent.getStringExtra("username")
