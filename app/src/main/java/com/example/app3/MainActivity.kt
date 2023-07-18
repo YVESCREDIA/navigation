@@ -10,6 +10,8 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.app3.web.CountriesApi
 import com.example.app3.web.RetrofitHelper
+import com.example.example.CountriesInfo
+import com.google.gson.Gson
 import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
@@ -44,16 +46,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        val result= CountriesApi.retrofitService.getPropreties().enqueue(object :retrofit2.Callback<String>{
-            override fun onResponse(call: retrofit2.Call<String>, response: retrofit2.Response<String>) {
-                Log.i("response",response.body().toString())
-            }
 
-            override fun onFailure(call: retrofit2.Call<String>, t: Throwable) {
-                Log.i("response",t.message.toString())
-            }
-
-        });
     }
 
     private fun log(x: String, base: String) {

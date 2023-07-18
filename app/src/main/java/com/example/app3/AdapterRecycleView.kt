@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
-class AdapterRecycleView(private val context:Context,private val ListCountry:List<Country>):RecyclerView.Adapter<AdapterRecycleView.ViewHolder>() {
+class AdapterRecycleView(private val context:Context, private val ListCountry:List<Country>):RecyclerView.Adapter<AdapterRecycleView.ViewHolder>() {
     class ViewHolder(private val view: View):RecyclerView.ViewHolder(view){
             val name: TextView = view.findViewById(R.id.txt_name)
             val description: TextView = view.findViewById(R.id.txt_description)
@@ -29,7 +30,8 @@ class AdapterRecycleView(private val context:Context,private val ListCountry:Lis
         val country = ListCountry[position]
         holder.name.text = country.name
         holder.description.text = country.description
-        holder.image.setImageResource(country.flag)
+        //holder.image.setImageResource(country.flag)
+        Glide.with(context).load(country.flag).into(holder.image)
 
     }
 }
